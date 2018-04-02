@@ -1,0 +1,14 @@
+
+spring:
+  cloud:
+    config:
+     uri: "https://somecloudconfigserver.lds.org"
+     username: "someUser"
+     password: "somePassword"
+     failFast: true
+     discovery:
+       enabled: false
+     name: "oAuthProxy"
+health:
+  config:
+    enabled: true

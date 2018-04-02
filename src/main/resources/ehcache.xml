@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache updateCheck="true" monitoring="autodetect" dynamicConfig="true">
+
+    <defaultCache
+            maxElementsInMemory="5000"
+            eternal="false"
+            timeToIdleSeconds="300"
+            timeToLiveSeconds="1800"
+            overflowToDisk="false"
+            memoryStoreEvictionPolicy="LRU"
+            statistics="true"
+    />
+
+    <cache name="wsHeaders"
+           maxElementsInMemory="8"
+           overflowToDisk="false"
+           timeToIdleSeconds="0"
+           timeToLiveSeconds="14400"
+           memoryStoreEvictionPolicy="LRU"
+           statistics="true"
+    />
+    <cache name="userHeaders"
+           maxElementsInMemory="10000"
+           overflowToDisk="false"
+           timeToIdleSeconds="0"
+           timeToLiveSeconds="14400"
+           memoryStoreEvictionPolicy="LRU"
+           statistics="true"
+    />
+
+</ehcache>
