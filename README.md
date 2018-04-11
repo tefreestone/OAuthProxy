@@ -3,10 +3,6 @@
 This project implements a [reverse proxy](https://en.wikipedia.org/wiki/Reverse_proxy) which retrieves authenticated resources for a client from an application.   This reverse proxy authenticates a user via oAuth 2.0 and forwards headers (if necessary) to an application.  This reverse proxy can forward requests to an external or docker co-located application.
 The use case for this project is a legacy application that is too difficult to migrate to oAuth natively without a considerable effort.  This project provides an path to authenticate an HTTP Headers-based application without considerable effort.
 
-
-#### Please Note:
-The current version of this OAuth Legacy Reverse Proxy **DOES NOT** implement course grain URL pattern-based authorization policies (e.g. Exposee Oracle policies).  Contact the WAM team for WAM Oracle policy migration questions.  
-
 This proxy uses Java 9.  Your legacy application may need some refactoring for the transition to Java 9.  
 
 # Configuration
@@ -117,6 +113,3 @@ Running image locally :
 ```bash
 docker run -p 80:80 -it tefreestone/demo:1.0.0-SNAPSHOT
 ```
-
-### ICS Implementation
-Please refer to [Getting Started with Docker on Cloud Foundry](https://ip.ldschurch.org/578/document/using-docker-with-cloud-foundry) for information on deploying a docker image to our Cloud Foundry implemenation.
