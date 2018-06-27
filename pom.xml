@@ -23,7 +23,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<docker.image.prefix>oAuthLegacyProxy</docker.image.prefix>
 		<java.version>1.8</java.version>
-		<spring-cloud.version>Finchley.RC2</spring-cloud.version>
+		<spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
 		<dockerfile-maven-version>1.4.0</dockerfile-maven-version>
 	</properties>
 
@@ -55,6 +55,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
+			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -120,34 +121,34 @@
 				<groupId>pl.project13.maven</groupId>
 				<artifactId>git-commit-id-plugin</artifactId>
 			</plugin>
-			<plugin>
-				<groupId>com.spotify</groupId>
-				<artifactId>dockerfile-maven-plugin</artifactId>
-				<version>${dockerfile-maven-version}</version>
-				<configuration>
-					<repository>tefreestone/oauth-proxy</repository>
-					<tag>${project.version}</tag>
-					<buildArgs>
-						<JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
-					</buildArgs>
-				</configuration>
-				<dependencies>
-					<dependency>
-						<groupId>javax.activation</groupId>
-						<artifactId>activation</artifactId>
-						<version>1.1.1</version>
-					</dependency>
-				</dependencies>
-				<executions>
-					<execution>
-						<id>default</id>
-						<goals>
-							<goal>build</goal>
-							<goal>push</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
+			<!--<plugin>-->
+				<!--<groupId>com.spotify</groupId>-->
+				<!--<artifactId>dockerfile-maven-plugin</artifactId>-->
+				<!--<version>${dockerfile-maven-version}</version>-->
+				<!--<configuration>-->
+					<!--<repository>tefreestone/oauth-proxy</repository>-->
+					<!--<tag>${project.version}</tag>-->
+					<!--<buildArgs>-->
+						<!--<JAR_FILE>${project.build.finalName}.jar</JAR_FILE>-->
+					<!--</buildArgs>-->
+				<!--</configuration>-->
+				<!--<dependencies>-->
+					<!--<dependency>-->
+						<!--<groupId>javax.activation</groupId>-->
+						<!--<artifactId>activation</artifactId>-->
+						<!--<version>1.1.1</version>-->
+					<!--</dependency>-->
+				<!--</dependencies>-->
+				<!--<executions>-->
+					<!--<execution>-->
+						<!--<id>default</id>-->
+						<!--<goals>-->
+							<!--<goal>build</goal>-->
+							<!--<goal>push</goal>-->
+						<!--</goals>-->
+					<!--</execution>-->
+				<!--</executions>-->
+			<!--</plugin>-->
 		</plugins>
 	</build>
 
