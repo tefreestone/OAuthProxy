@@ -1,0 +1,17 @@
+---
+anthill-cf-org: Enterprise Architecture
+anthill-cf-space: tefreestone
+anthill-cf-clouds:
+- api: "api.cf.lds.org"
+
+applications:
+- name: oAuthProxy-dev
+  path: ../target/oAuthProxy.jar
+  buildpack: java8
+  instances: 2
+  memory:    1G
+  routes:
+  - route: "oAuthProxy.app-dev.lds.org"
+  env:
+    SPRING_PROFILES_ACTIVE: "dev"
+    TZ: "UTC"

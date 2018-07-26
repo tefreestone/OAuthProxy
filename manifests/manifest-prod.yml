@@ -1,0 +1,22 @@
+---
+anthill-cf-org: "ESM"
+anthill-cf-space: "mobile-access"
+anthill-cf-clouds:
+- api: "api.cf.lds.org"
+
+applications:
+- name: "contentDistribution-dev"
+  path: "../target/ContentDistribution.jar"
+  buildpack: "java8"
+  instances: 6
+  memory:    1G
+  routes:
+  - route: "contentdist.app.lds.org"
+  - route: "content-dist.app.lds.org"
+  env:
+    SPRING_PROFILES_ACTIVE: "dev"
+    TZ: "UTC"
+  services:
+  - content-distribution-db-service
+  - splunk
+  - Monitoring
